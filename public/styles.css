@@ -1,0 +1,369 @@
+/* General Styles */ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    text-align: center;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+header {
+
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    background-image: linear-gradient(to bottom right, black, #1e293b);
+    font-family: 'Georgia', serif;
+    
+    
+      
+}
+pl{
+    font-family: 'Georgia', serif;
+}
+
+
+.header-container h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'Georgia', serif;
+    
+}
+
+.header-container p {
+    margin: 5px 0 20px;
+    font-size: 1.2em;
+}
+
+.search-box {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #202124;
+    color: #fff;
+    caret-color: #4285f4; /* Google's blue color for the cursor */
+}
+
+.search-box::placeholder {
+    color: #9aa0a6; /* Subtle placeholder color */
+}
+
+.search-box:focus {
+    background-color: #303134; /* Slightly lighter background on focus */
+}
+
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1e293b;
+}
+
+
+.resource-cards, .topics, .world-topics, .solutions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card, .topic, .world-topic, .solution {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(20% - 20px);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover, .topic:hover, .world-topic:hover, .solution:hover {
+    transform: scale(1.05);
+}
+.resource-cards,
+.topics,
+.world-topics,
+.solutions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+}
+
+.topic,
+.world-topic,
+.solution {
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(30% - 40px);
+    padding: 40px; /* Increased padding for taller cards */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-height: 100px; /* Ensures a minimum height */
+}
+.card i {
+    font-size: 2.1 rem; /* Adjust icon size */
+    color: black; /* Icon color */
+    margin-bottom: 2px; /* Space below the icon */
+}
+
+.topic,
+.world-topic,
+.solution {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background-color: black;
+}
+
+.card:hover,
+.topic:hover,
+.world-topic:hover,
+.solution:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card button,
+.topic a,
+.world-topic a,
+.solution a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 20px 40px; /* Increased padding for bigger buttons */
+    font-size: 1.2rem; /* Increased font size */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover,
+.topic a:hover,
+.world-topic a:hover,
+.solution a:hover {
+    background-color: black;
+}
+
+footer {
+    :root {
+        --link-color: #FF5733;
+        --visited-link-color: #C70039;
+        --hover-link-color: #900C3F;
+        --active-link-color: #581845;
+    }
+    
+    a {
+        color: var(--link-color);
+    }
+    
+    a:visited {
+        color: var(--visited-link-color);
+    }
+    
+    a:hover {
+        color: var(--hover-link-color);
+    }
+    
+    a:active {
+        color: var(--active-link-color);
+    }
+    
+    background-color: #1e293b;
+    color: white;
+    padding: 30px;
+    text-align: center;
+
+
+z {
+    text-decoration: none;
+}
+    
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-container div {
+    flex: 1;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resource-cards, .topics, .world-topics, .solutions {
+        flex-direction: column;
+    }
+
+    .card, .topic, .world-topic, .solution {
+        flex: 1 1 100%;
+    }
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius:30px;
+
+}
+
+#results {
+
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1e293b;
+   
+}
+
+.article-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    width: 50;
+}
+
+.article-item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.article-item a:hover {
+    text-decoration: underline;
+}
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1e293b;
+    
+}
+
+
+.thumbnail {
+    width: 500px;
+    
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .flex-container {
+    display: flex;
+  }
+  
+  .flex-container > div {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .caption {
+    padding: 15px;
+  }
+  
+  .caption h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+    height: 500;
+    width: 500;
+  }
+ 
+  .caption h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+    height: 500;
+    width: 500;
+  }
+  
+  .caption p {
+    font-size: 14px;
+    color: #666;
+  }
+ 
+  .read-more {
+    background-color: blue; /* Set background color to blue */
+    color: white; /* Make text color white */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  .read-more:hover {
+    background-color: darkblue; /* Darker blue on hover */
+  }
+
+  .card {
+    width: 250px; /* Increase width of the card */
+    height: 150px; /* Increase height of the card */
+    margin: 20px; /* Add some spacing around the card */
+    font-size: 18px; /* Adjust font size for content */
+    padding: 15px; /* Add internal spacing for better layout */
+  }
+  
+  .card button {
+    font-size: 16px; /* Adjust button font size */
+    padding: 10px 20px; /* Increase button size */
+  }
+
+
+
+
+  

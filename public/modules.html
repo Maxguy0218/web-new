@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('#sidebar a');
+            const sections = document.querySelectorAll('.faq-section');
+
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Remove active class from all links
+                    links.forEach(l => l.classList.remove('text-blue-600', 'font-semibold'));
+
+                    // Add active class to clicked link
+                    link.classList.add('text-blue-600', 'font-semibold');
+
+                    // Show the corresponding section
+                    sections.forEach(section => {
+                        if (section.id === link.getAttribute('href').substring(1)) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- Header -->
+        <header class="flex justify-between items-center py-4">
+            <h1 class="text-xl font-bold text-gray-800">ABS Compass</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Home</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Modules</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Progress</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Resources</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="bg-white p-4 shadow rounded-lg">
+                <h2 class="font-bold text-gray-800 text-lg mb-4">Module Sections</h2>
+                <ul class="space-y-2">
+                    <li><a href="#introduction" class="block text-gray-600 hover:text-blue-600">FAQs</a></li>
+                    <li><a href="#basic-concepts" class="block text-gray-600 hover:text-blue-600">Basic Concepts</a></li>
+                    <li><a href="#advanced-topics" class="block text-gray-600 hover:text-blue-600">Advanced Topics</a></li>
+                    <li><a href="#troubleshooting" class="block text-gray-600 hover:text-blue-600">Troubleshooting</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <section class="md:col-span-3">
+                <!-- Introduction FAQs -->
+                <div id="introduction" class="faq-section bg-white p-6 shadow rounded-lg">
+                    <h2 class="font-bold text-gray-800 text-xl mb-4">FAQs</h2>
+                    <p class="text-gray-600 mb-4">Frequently asked questions about getting started with the platform</p>
+                    <div class="space-y-4">
+                        <details class="border rounded-lg">
+                            <summary class="bg-gray-100 px-4 py-3 cursor-pointer text-gray-800 font-medium">
+                                How do I get started with the modules?
+                            </summary>
+                            <div class="p-4 text-gray-600">
+                                Begin by completing the orientation module and then proceed through each section sequentially.
+                            </div>
+                        </details>
+
+                        <details class="border rounded-lg">
+                            <summary class="bg-gray-100 px-4 py-3 cursor-pointer text-gray-800 font-medium">
+                                What are the prerequisites for this course?
+                            </summary>
+                            <div class="p-4 text-gray-600">
+                                There are no specific prerequisites. The compass is designed to accommodate learners at all levels, starting from the basics.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Basic Concepts -->
+                <div id="basic-concepts" class="faq-section bg-white p-6 shadow rounded-lg hidden">
+                    <h2 class="font-bold text-gray-800 text-xl mb-4">Basic Concepts</h2>
+                    <p class="text-gray-600 mb-4">Learn the fundamental concepts to build a strong foundation about modules.</p>
+                    <div class="space-y-4">
+                        <details class="border rounded-lg">
+                            <summary class="bg-gray-100 px-4 py-3 cursor-pointer text-gray-800 font-medium">
+                                What are the core topics covered?
+                            </summary>
+                            <div class="p-4 text-gray-600">
+                                The course covers topics such as navigation, modules, and progress tracking.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Advanced Topics -->
+                <div id="advanced-topics" class="faq-section bg-white p-6 shadow rounded-lg hidden">
+                    <h2 class="font-bold text-gray-800 text-xl mb-4">Advanced Topics</h2>
+                    <p class="text-gray-600 mb-4">Dive deeper into advanced concepts for better mastery.</p>
+                    <div class="space-y-4">
+                        <details class="border rounded-lg">
+                            <summary class="bg-gray-100 px-4 py-3 cursor-pointer text-gray-800 font-medium">
+                                Are advanced modules self-paced?
+                            </summary>
+                            <div class="p-4 text-gray-600">
+                                Yes, advanced modules are self-paced and include learning.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div id="troubleshooting" class="faq-section bg-white p-6 shadow rounded-lg hidden">
+                    <h2 class="font-bold text-gray-800 text-xl mb-4">Troubleshooting</h2>
+                    <p class="text-gray-600 mb-4">Find solutions to common issues faced by learners.</p>
+                    <div class="space-y-4">
+                        <details class="border rounded-lg">
+                            <summary class="bg-gray-100 px-4 py-3 cursor-pointer text-gray-800 font-medium">
+                                Who can I contact for support?
+                            </summary>
+                            <div class="p-4 text-gray-600">
+                                You can contact the support team through the help center or email provided in the about section.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
